@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   phoneBook.class.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/11 20:34:35 by llai              #+#    #+#             */
-/*   Updated: 2024/02/11 20:34:36 by llai             ###   ########.fr       */
+/*   Created: 2024/02/11 20:42:42 by llai              #+#    #+#             */
+/*   Updated: 2024/02/11 20:47:59 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cctype>
+#include "../includes/phoneBook.class.hpp"
 #include <iostream>
-#include <string>
 
-std::string	to_upper(const std::string& str)
+PhoneBook::PhoneBook(void)
 {
-	std::string result = str;
-
-	for(size_t i = 0; i < result.length(); i++)
-		result[i] = toupper(result[i]);
-	return (result);
+	std::cout << "Constrcutor called" << std::endl;
+	return ;
 }
 
-int	main(int argc, char **argv)
+PhoneBook::~PhoneBook(void)
 {
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else
-		for(int i = 1; i < argc; i++)
-			std::cout << to_upper(argv[i]);
-	std::cout << std::endl;
-	return (0);
+	std::cout << "Destructor called" << std::endl;
+	return ;
 }
