@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 20:35:22 by llai              #+#    #+#             */
-/*   Updated: 2024/02/13 20:11:16 by llai             ###   ########.fr       */
+/*   Updated: 2024/02/13 22:02:00 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class PhoneBook
   PhoneBook(void);
   ~PhoneBook(void);
 
-  bool addContact(const std::string &firstName, const std::string &lastName,
-                  const std::string &nickName, const std::string &phoneNumber,
-                  const std::string &darkestSecret);
+  bool addContact(const std::string firstName, const std::string lastName,
+                  const std::string nickName, const std::string phoneNumber,
+                  const std::string darkestSecret);
   void showContacts(void) const;
 
  private:

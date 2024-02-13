@@ -6,11 +6,17 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 20:46:13 by llai              #+#    #+#             */
-/*   Updated: 2024/02/13 21:45:55 by llai             ###   ########.fr       */
+/*   Updated: 2024/02/13 22:00:48 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/myAwesomePhonebook.hpp"
+
+void searchContact(PhoneBook &phoneBook)
+{
+  phoneBook.showContacts();
+  return;
+}
 
 int main(void)
 {
@@ -24,6 +30,7 @@ int main(void)
     std::getline(std::cin, command);
     if (command == "EXIT") break;
     if (command == "ADD") addNewContact(phoneBook);
+    if (command == "SEARCH") searchContact(phoneBook);
   }
 
   return 0;

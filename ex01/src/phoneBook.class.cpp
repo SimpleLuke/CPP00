@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 20:42:42 by llai              #+#    #+#             */
-/*   Updated: 2024/02/13 20:31:06 by llai             ###   ########.fr       */
+/*   Updated: 2024/02/13 22:40:02 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@
 
 PhoneBook::PhoneBook(void) : _numContacts(0)
 {
-  std::cout << "PhoneBook:Constrcutor called" << std::endl;
-  // for (int i = 0; i < this->MAX_CONTACTS; ++i)
-  // {
-  //   this->_contacts[i] = Contact();
-  // }
   return;
 }
 
@@ -31,11 +26,11 @@ PhoneBook::~PhoneBook(void)
   return;
 }
 
-bool PhoneBook::addContact(const std::string &firstName,
-                           const std::string &lastName,
-                           const std::string &nickName,
-                           const std::string &phoneNumber,
-                           const std::string &darkestSecret)
+bool PhoneBook::addContact(const std::string firstName,
+                           const std::string lastName,
+                           const std::string nickName,
+                           const std::string phoneNumber,
+                           const std::string darkestSecret)
 {
   if (this->_numContacts >= this->MAX_CONTACTS)
   {
@@ -43,8 +38,12 @@ bool PhoneBook::addContact(const std::string &firstName,
     return false;
   }
 
-  this->_contacts[this->_numContacts++] =
-      Contact(firstName, lastName, nickName, phoneNumber, darkestSecret);
+  this->_contacts[this->_numContacts].setFirstName(firstName);
+  this->_contacts[this->_numContacts].setLastName(lastName);
+  this->_contacts[this->_numContacts].setNickname(nickName);
+  this->_contacts[this->_numContacts].setPhoneNumber(phoneNumber);
+  this->_contacts[this->_numContacts].setDarkestSecret(darkestSecret);
+  this->_numContacts++;
   std::cout << "Contact added successfully" << std::endl;
   return true;
 }
@@ -59,8 +58,6 @@ void PhoneBook::showContacts(void) const
   std::cout << "Contacts in the phonebook" << std::endl;
   for (int i = 0; i < this->_numContacts; ++i)
   {
-    std::cout << this->_contacts[i].getFirstName()
-              << this->_contacts[i].getLastName()
-              << this->_contacts[i].getPhoneNumber() << std::endl;
+    std::cout << this->_contacts[i].getFirstName() << std::endl;
   }
 }

@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 20:39:08 by llai              #+#    #+#             */
-/*   Updated: 2024/02/13 20:18:41 by llai             ###   ########.fr       */
+/*   Updated: 2024/02/13 22:31:52 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,21 @@
 class Contact
 {
  public:
-  Contact()
-      : _firstName(""),
-        _lastName(""),
-        _nickName(""),
-        _phoneNumber(""),
-        _darkestSecret(""){};
-  Contact(const std::string &firstName, const std::string &lastName,
-          const std::string &nickName, const std::string &phoneNumber,
-          const std::string &darkestSecret);
+  Contact();
+  // Contact(const std::string firstName, const std::string lastName,
+  //         const std::string nickName, const std::string phoneNumber,
+  //         const std::string darkestSecret);
   ~Contact();
   std::string getFirstName() const;
   std::string getLastName() const;
   std::string getNickName() const;
   std::string getPhoneNumber() const;
   std::string getDardestSecret() const;
+  bool setFirstName(std::string firstName);
+  bool setLastName(std::string lastName);
+  bool setNickname(std::string nickName);
+  bool setPhoneNumber(std::string phoneNumber);
+  bool setDarkestSecret(std::string darkestSecret);
 
  private:
   std::string _firstName;

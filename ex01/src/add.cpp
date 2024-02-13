@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:45:17 by llai              #+#    #+#             */
-/*   Updated: 2024/02/13 21:46:32 by llai             ###   ########.fr       */
+/*   Updated: 2024/02/13 22:39:06 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ std::string promptDarkestSecret(void)
   return darkestSecret;
 }
 
-bool addNewContact(PhoneBook &phoneBook)
+void addNewContact(PhoneBook &phoneBook)
 {
   std::string firstName;
   std::string lastName;
@@ -80,12 +80,12 @@ bool addNewContact(PhoneBook &phoneBook)
   std::string phoneNumber;
   std::string darkestSecret;
 
-  promptFirstName();
-  promptLastName();
-  promptNickName();
-  promptPhoneNumber();
-  promptDarkestSecret();
+  firstName = promptFirstName();
+  lastName = promptLastName();
+  nickName = promptNickName();
+  phoneNumber = promptPhoneNumber();
+  darkestSecret = promptDarkestSecret();
   phoneBook.addContact(firstName, lastName, nickName, phoneNumber,
                        darkestSecret);
-  return true;
+  return;
 }

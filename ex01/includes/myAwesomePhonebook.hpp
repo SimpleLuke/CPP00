@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 20:21:45 by llai              #+#    #+#             */
-/*   Updated: 2024/02/13 21:46:23 by llai             ###   ########.fr       */
+/*   Updated: 2024/02/13 21:59:42 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 #include <iostream>
 #include <string>
 
-bool addNewContact(PhoneBook &phoneBook);
+void addNewContact(PhoneBook &phoneBook);
 
 #endif // !MYAWESOMEPHONEBOOK_HPP
