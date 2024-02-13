@@ -3,7 +3,9 @@ NAME = phoneBook
 CC = c++
 CFLAG = -Wall -Werror -Wextra -std=c++98 -g3
 SRC = src/phoneBook.class.cpp \
-	  src/main.cpp
+	  src/contact.class.cpp \
+	  src/main.cpp \
+	  src/add.cpp
 OBJ = $(SRC:src/%cpp=$(BIN)/%o)
 INCS = ./includes
 IFLAGS = -I $(INCS)
