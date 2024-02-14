@@ -1,8 +1,9 @@
 BIN = bin
-NAME = phoneBook
+NAME = Account
 CC = c++
-CFLAG = -Wall -Werror -Wextra -std=c++98 -g3
-SRC = Account.cpp
+CFLAG = -std=c++98 -g3
+SRC = Account.cpp \
+	  tests.cpp
 OBJ = $(SRC:%cpp=$(BIN)/%o)
 UNAME := $(shell uname)
 RM = rm -rf
