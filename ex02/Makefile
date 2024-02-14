@@ -1,18 +1,16 @@
 BIN = bin
-NAME = megaphone
+NAME = phoneBook
 CC = c++
 CFLAG = -Wall -Werror -Wextra -std=c++98 -g3
-SRC = src/megaphone.cpp
-OBJ = $(SRC:src/%cpp=$(BIN)/%o)
-INCS = ./includes
-IFLAGS = -I $(INCS)
+SRC = Account.cpp
+OBJ = $(SRC:%cpp=$(BIN)/%o)
 UNAME := $(shell uname)
 RM = rm -rf
 
 all: $(NAME)
 
-$(BIN)/%.o: src/%.cpp
-	$(CC) -c $< $(CFLAG) $(IFLAGS) -o $@
+$(BIN)/%.o: %.cpp
+	$(CC) -c $< $(CFLAG) -o $@
 
 $(NAME): $(BIN) $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)

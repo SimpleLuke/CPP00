@@ -6,17 +6,17 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 20:42:42 by llai              #+#    #+#             */
-/*   Updated: 2024/02/14 12:49:44 by llai             ###   ########.fr       */
+/*   Updated: 2024/02/14 14:21:04 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/phoneBook.class.hpp"
 
+#include <cstdlib>
 #include <iomanip>
 #include <iostream>
 #include <ostream>
 #include <string>
-#include <limits>
 
 PhoneBook::PhoneBook(void) : _numContacts(0){}
 
@@ -162,10 +162,13 @@ void PhoneBook::showContacts(void)
 	   std::cout << "|" << std::setw(10) << i << "|" << std::setw(10) << this->_truncate(this->_contacts[i].getFirstName(), 10) << "|" << std::setw(10) << this->_truncate(this->_contacts[i].getLastName(), 10) << "|" << std::setw(10) << this->_truncate(this->_contacts[i].getNickName(), 10) << "|" << std::endl;
   }
 	std::cout << "|-------------------------------------------|" << std::endl;
-	int	idx;
 	std::cout << "(Enter the index to display an entry)" << std::endl;
-	std::cin >> idx;
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	std::string	idxStr;
+	char *endPtr;
+	std::getline(std::cin, idxStr);
+	const long idx = std::strtol(idxStr.c_str(), &endPtr, 10);
+	if (endPtr != idxStr.c_str() && *endPtr == '\0')
+	{
 	if (idx >= 0 && idx < this->_numContacts)
 	{
 		std::cout << "First Name:\t" << this->_contacts[idx].getFirstName() << std::endl;
@@ -173,9 +176,11 @@ void PhoneBook::showContacts(void)
 		std::cout << "Nickname:\t" << this->_contacts[idx].getNickName() << std::endl;
 		std::cout << "Phone Number:\t" << this->_contacts[idx].getPhoneNumber() << std::endl;
 		std::cout << "Darkest Secret:\t" << this->_contacts[idx].getDardestSecret() << std::endl;
+	} else {
+		std::cout << "Invalid index option" << std::endl;
 	}
-	if (idx < 0)
-		std::cout << "Invalid Index: Index must be positive" << std::endl;
-	else if (idx >= this->_numContacts)
-		std::cout << "Invalid Index: Out of range" << std::endl;
+	}
+	else {
+		std::cout << "Invalid number input" << std::endl;
+	}
 }

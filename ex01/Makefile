@@ -14,7 +14,7 @@ RM = rm -rf
 all: $(NAME)
 
 $(BIN)/%.o: src/%.cpp
-	$(CC) -c $< $(CFLAG) -o $@
+	$(CC) -c $< $(CFLAG) $(IFLAGS) -o $@
 
 $(NAME): $(BIN) $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
