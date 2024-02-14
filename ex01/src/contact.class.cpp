@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 20:40:22 by llai              #+#    #+#             */
-/*   Updated: 2024/02/13 22:39:57 by llai             ###   ########.fr       */
+/*   Updated: 2024/02/14 12:49:10 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,34 +20,9 @@ Contact::Contact()
       _lastName(""),
       _nickName(""),
       _phoneNumber(""),
-      _darkestSecret("")
-{
-  std::cout << "Contact: Constrcutor called" << std::endl;
-  return;
-};
-// Contact::Contact(const std::string firstName, const std::string lastName,
-//                  const std::string nickName, const std::string phoneNumber,
-//                  const std::string darkestSecret)
-//     : _firstName(firstName),
-//       _lastName(lastName),
-//       _nickName(nickName),
-//       _phoneNumber(phoneNumber),
-//       _darkestSecret(darkestSecret)
-// {
-//   std::cout << "Contact: Constrcutor called" << std::endl;
-//   // this->firstName = firstName;
-//   // this->lastName = lastName;
-//   // this->nickName = nickName;
-//   // this->phoneNumber = phoneNumber;
-//   // this->darkestSecret = darkestSecret;
-//   return;
-// }
+      _darkestSecret(""){}
 
-Contact::~Contact(void)
-{
-  std::cout << "Contact: Destructor called" << std::endl;
-  return;
-}
+Contact::~Contact(void){}
 
 std::string Contact::getFirstName(void) const { return (this->_firstName); }
 
