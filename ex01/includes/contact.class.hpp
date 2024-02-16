@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 20:39:08 by llai              #+#    #+#             */
-/*   Updated: 2024/02/13 22:31:52 by llai             ###   ########.fr       */
+/*   Updated: 2024/02/16 00:39:06 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@ class Contact
 {
  public:
   Contact();
-  // Contact(const std::string firstName, const std::string lastName,
-  //         const std::string nickName, const std::string phoneNumber,
-  //         const std::string darkestSecret);
   ~Contact();
   std::string getFirstName() const;
   std::string getLastName() const;

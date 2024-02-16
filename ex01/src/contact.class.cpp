@@ -6,13 +6,12 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 20:40:22 by llai              #+#    #+#             */
-/*   Updated: 2024/02/14 12:49:10 by llai             ###   ########.fr       */
+/*   Updated: 2024/02/16 00:40:56 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/contact.class.hpp"
 
-#include <iostream>
 #include <string>
 
 Contact::Contact()
@@ -20,9 +19,11 @@ Contact::Contact()
       _lastName(""),
       _nickName(""),
       _phoneNumber(""),
-      _darkestSecret(""){}
+      _darkestSecret("")
+{
+}
 
-Contact::~Contact(void){}
+Contact::~Contact(void) {}
 
 std::string Contact::getFirstName(void) const { return (this->_firstName); }
 
