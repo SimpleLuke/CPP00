@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 20:42:42 by llai              #+#    #+#             */
-/*   Updated: 2024/02/16 00:39:24 by llai             ###   ########.fr       */
+/*   Updated: 2024/03/26 15:43:28 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,19 @@ bool PhoneBook::_addContact(const std::string firstName,
   if (this->_numContacts >= this->MAX_CONTACTS)
   {
     std::cout << "Phonebook is full." << std::endl;
-    return false;
+	for (int i = 0; i < this->MAX_CONTACTS - 1; i++) {
+		this->_contacts[i].setFirstName(this->_contacts[i + 1].getFirstName());
+		this->_contacts[i].setLastName(this->_contacts[i + 1].getLastName());
+		this->_contacts[i].setNickname(this->_contacts[i + 1].getNickName());
+		this->_contacts[i].setPhoneNumber(this->_contacts[i + 1].getPhoneNumber());
+		this->_contacts[i].setDarkestSecret(this->_contacts[i + 1].getDardestSecret());
+	}
+	this->_contacts[this->MAX_CONTACTS - 1].setFirstName(firstName);
+	this->_contacts[this->MAX_CONTACTS - 1].setLastName(lastName);
+	this->_contacts[this->MAX_CONTACTS - 1].setNickname(nickName);
+	this->_contacts[this->MAX_CONTACTS - 1].setPhoneNumber(phoneNumber);
+	this->_contacts[this->MAX_CONTACTS - 1].setDarkestSecret(darkestSecret);
+    return true;
   }
 
   this->_contacts[this->_numContacts].setFirstName(firstName);
